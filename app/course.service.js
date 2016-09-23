@@ -11,6 +11,10 @@ System.register([], function(exports_1, context_1) {
                 CourseService.prototype.getCourses = function () {
                     return ["Courses1", "Courses2", "Courses3"];
                 };
+                ;
+                CourseService.prototype.getAnthors = function () {
+                    return ["Anthor1", "Anthor2", "Anthor3"];
+                };
                 return CourseService;
             }());
             exports_1("CourseService", CourseService);
