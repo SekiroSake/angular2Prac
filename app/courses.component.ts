@@ -14,5 +14,5 @@ import {Component} from 'angular2/core'
 })
 export class CoursesComponent {
     title = "The title of courses page";
-    courses = ["Courses1", "Courses2", "Courses3"]
+    courses;
 }

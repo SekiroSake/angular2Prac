@@ -26,3 +26,14 @@ export class CoursesComponent {
     courses = ["Courses1", "Courses2", "Courses3"]
 }
 ```
+### Service
+----
+```
+export class CourseService {
+  getCourses() : string[] {
+    return ["Courses1", "Courses2", "Courses3"];
+  }
+}
+```
+### Dependency Injection
+----

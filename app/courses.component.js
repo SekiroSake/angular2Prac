@@ -21,7 +21,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             CoursesComponent = (function () {
                 function CoursesComponent() {
                     this.title = "The title of courses page";
-                    this.courses = ["Courses1", "Courses2", "Courses3"];
                 }
                 CoursesComponent = __decorate([
                     core_1.Component({
