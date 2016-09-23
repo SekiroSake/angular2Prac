@@ -137,6 +137,7 @@ export class CoursesComponent {
 ```
 ### Directive
 * auto-grow.directive.ts
+----
 ```
 import {Directive, ElementRef, Renderer} from 'angular2/core'
 
@@ -163,6 +164,7 @@ export class AutoGrowDirective {
 
 ```
 * courses.component.ts
+----
 ```
 import {Component} from 'angular2/core'
 import {CourseService} from './course.service'
