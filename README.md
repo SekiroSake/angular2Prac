@@ -63,3 +63,74 @@ export class CoursesComponent {
     }
 }
 ```
+# All in one CheatSheet
+### Creating Components
+```
+import {Component} from ‘angular2/core’
+@Component({
+     selector: ‘courses’,
+     template: ‘<h2>Courses</h2>
+})
+export class Component { }
+```
+
+### Using Components
+```
+//In AppComponent:
+
+import {CoursesComponent} from ‘./courses.component’
+
+@Component({
+template: ‘<courses></courses>’, directives: [CoursesComponent]
+})
+```
+### Templates
+```
+Interpolation  {{ title }}
+Displaying lists:
+<ul>
+<li *ngFor=“#course of courses”>
+{{ course }}  </li>
+</ul>
+```
+
+### Services
+```
+export class CourseService {
+
+}
+```
+### Dependency Injection
+```
+@Component({
+providers: [CourseService]
+})
+
+export class CourseComponent {  constructor(courseService: CourseService) {   }
+}
+```
+
+### Directives
+```
+import {Directive} from ‘angular2/core’
+
+@Directive({
+selector: [autoGrow],  host: {
+‘(focus)’: ‘onFocus()’, ‘(blur)’: ‘onBlur()’
+}  })
+
+export class AutoGrowDirective {  onFocus() {
+}
+onBlur() {
+}  }
+```
+### To access and modify DOM elements
+```
+import {ElementRef, Renderer} from ‘angular2/core’
+export class AutoGrowDirective {
+constructor(el: ElementRef, renderer: Renderer) {  }
+
+onFocus(){
+‘200’);  this.renderer.setElementStyle(this.el, ‘width’, }
+}
+```
