@@ -134,3 +134,62 @@ onFocus(){
 ‘200’);  this.renderer.setElementStyle(this.el, ‘width’, }
 }
 ```
+
+### Directive
+* auto-grow.directive.ts
+```
+import {Directive, ElementRef, Renderer} from 'angular2/core'
+
+@Directive({
+    selector: '[autoGrow]',
+    host: {
+        '(focus)': 'onFocus()',
+        '(blur)': 'onBlur()'
+    }
+})
+export class AutoGrowDirective {
+    //_el: ElementRef; old way to declare private var
+
+    constructor(private el: ElementRef, private renderer: Renderer) {
+        //this._el = el; old way to declare private var
+    }
+    onFocus() {
+        this.renderer.setElementStyle(this.el.nativeElement, 'width', '200')
+    }
+    onBlur() {
+        this.renderer.setElementStyle(this.el.nativeElement, 'width', '120')
+    }
+}
+
+```
+* courses.component.ts
+```
+import {Component} from 'angular2/core'
+import {CourseService} from './course.service'
+import {AutoGrowDirective} from './auto-grow.directive';
+
+@Component({
+    selector: 'courses',
+    template: `
+          <h2>Courses</h2>
+          {{title}}
+          <input type="text" autoGrow/>
+          <ul>
+            <li *ngFor="#course of courses">
+              {{course}}
+            </li>
+          </ul>
+          `,
+          providers: [CourseService],
+          directives:[AutoGrowDirective]
+})
+export class CoursesComponent {
+    title = "The title of courses page";
+    courses;
+
+    constructor(courseService: CourseService){
+      this.courses = courseService.getCourses();
+    }
+}
+
+```
