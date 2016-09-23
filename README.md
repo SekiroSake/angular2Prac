@@ -4,9 +4,9 @@ Practise ng2 with tutorials
 ## How to Run
 Go to project direct and - > npm start   , project will be loaded in watch mode
 
-=== Template with ul and ngFor ===
+### Template with ul and ngFor
 ----
-<code>
+```
 import {Component} from 'angular2/core'
 
 @Component({
@@ -25,4 +25,4 @@ export class CoursesComponent {
     title = "The title of courses page";
     courses = ["Courses1", "Courses2", "Courses3"]
 }
-</code>
+```
