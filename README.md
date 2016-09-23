@@ -1,4 +1,4 @@
-# angular2Prac
+# angular2 rapid tutorial
 Practise ng2 with tutorials
 
 ## How to Run
