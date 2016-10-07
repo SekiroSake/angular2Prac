@@ -3,7 +3,7 @@ Practise ng2 with tutorials
 
 ## How to Run
 * Update environment of nodejs and npm
-     - $ npm install -g npm stable
+     - $ download and install nodejs
      - $ npm install -g typescript
      - $ npm install -g typings
 * for first init, $ npm install
