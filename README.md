@@ -2,7 +2,9 @@
 Practise ng2 with tutorials
 
 ## How to Run
-Go to project direct and - > npm start   , project will be loaded in watch mode
+* Update environment of nodejs and npm
+* for first init, npm install
+* npm start   , project will be loaded in watch mode
 
 # All in one CheatSheet
 ### Creating Components
