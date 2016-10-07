@@ -3,8 +3,8 @@ Practise ng2 with tutorials
 
 ## How to Run
 * Update environment of nodejs and npm
-     -npm install -g typescript
-     -npm install -g typings
+     - npm install -g typescript
+     - npm install -g typings
 * for first init, npm install
 * npm start   , project will be loaded in watch mode
 
