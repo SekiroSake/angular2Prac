@@ -10,8 +10,8 @@ Practise ng2 with tutorials
 * $ npm start   , project will be loaded in watch mode
 
 ### NPM internal problem (for windows)
-* If you accidentally updated npm in windows. it might kill itself when update failed and npm won't be working there after. It's so annoying to reinstall nodejs on windows. But thank god I figured it out: go to your user/.../appdata/roaming folder(it is default hidden) and delete those npm files... then reinstall nodejs
-'#WindowsGoToHell#PleaseCodingOnMac'
+* If you accidentally updated npm on windows, it might kill itself when update failed and npm won't be working thereafter. It's so annoying to reinstall nodejs on windows. But thank god I figured it out: go to your user/.../appdata/roaming folder(it is default hidden) and delete those npm files... then reinstall nodejs
+* '#WindowsGoToHell#PleaseCodingOnMac'
 
 
 # All in one CheatSheet
