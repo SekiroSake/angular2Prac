@@ -267,6 +267,8 @@ export class CoursesComponent {
 
     ```
 ## Two Way Data binding
+* two way binding is just the combo of property binding and event binding
+  - ng2 may two one binding as two one way , so that it could be easier to debug
 * In angular 1, two way data binding is ngModel  
 ```
 import {Component} from 'angular2/core'
@@ -287,3 +289,22 @@ export class AppComponent{
   *2nd way: (inpuit)="title = $event.target.value"*
 
 * Use ngModel to achieve 2way binding with less code
+
+```
+import {Component} from 'angular2/core'
+@Component（{
+  selector:'my-app',
+  template:`
+    <input type="text" [value]="title" (inpuit)="title = $event.target.value" />
+    <input type="text" [(ngModel)]="title" />
+    <input type="text" bindon-ngModel="title" />
+
+    <input type = "button" (click) = "title = '' " value = "clear" />
+    Preview:{{title}}
+
+  `
+}）
+export class AppComponent{
+  title = "Angular App";
+}
+```
