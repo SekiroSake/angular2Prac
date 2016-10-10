@@ -283,7 +283,7 @@ export class AppComponent{
   title = "Angular App";
 }
 ```
-  **first way: [value]="title"**
-  **2nd way: (inpuit)="title = $event.target.value"**
+  *first way: [value]="title" ;*
+  *2nd way: (inpuit)="title = $event.target.value"*
 
 * Use ngModel to achieve 2way binding with less code
