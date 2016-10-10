@@ -260,9 +260,28 @@ export class CoursesComponent {
         console.log("Clicked",$event);
       }
       onDivClick(){
+        // $event.stopPropagation();//stop div binding传播
         console.log("Handled by div");
       }
     }
 
     ```
 ## Two Way Data binding
+* In angular 1, two way data binding is ngModel  
+```
+import {Component} from 'angular2/core'
+@Component（{
+  selector:'my-app',
+  template:`
+    <input type="text" [value]="title" (inpuit)="title = $event.target.value" />
+    <input type = "button" (click) = "title = '' " value = "clear" />
+    Preview:{{title}}
+
+  `
+}）
+export class AppComponent{
+  title = "Angular App";
+}
+```
+  - first way: [value]="title"
+  - 2nd way: (inpuit)="title = $event.target.value"
