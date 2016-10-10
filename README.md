@@ -246,14 +246,23 @@ export class CoursesComponent {
     @Component（{
       selector:'my-app',
       template:`
-        <button (click)= "onClick()">Submit</button>
+      <div (click) = "onDivClick()">
+        <button (click)= "onClick($event)">Submit</button>
+      </div>
         <button on-click = "onClick()">Submit</button>
       `
     }）
     export class AppComponent{
-      onClick(){
-        console.log("Clicked");
+      //onClick(){
+        //console.log("Clicked");
+      //}
+      onClick($event){
+        console.log("Clicked",$event);
+      }
+      onDivClick(){
+        console.log("Handled by div");
       }
     }
 
     ```
+## Two Way Data binding
