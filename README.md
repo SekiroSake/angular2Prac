@@ -205,3 +205,55 @@ export class CoursesComponent {
 }
 
 ```
+
+### Binding
+* interpolation ： 插值 --> used in ng1 ng2 as expresseion -- > eg {{data.id}}
+
+  - property binding is one way: component -> view(DOM), e.g :
+  ```
+    <img [src]="imageUrl"/>
+  ```
+
+  - class binding
+    ```
+    @Component（{
+      selector:'my-app',
+      template:`
+        <button class="btn btn-primay" [class.active="isActive"]>Submit</button>
+      `
+    }）
+    export class AppComponent{
+      isActive = true;
+      //isActive = false;
+    }
+    ```
+  - style binding
+  ```
+  @Component（{
+    selector:'my-app',
+    template:`
+      <button class="btn btn-primay"
+      [style.backgroundColor]="isActive ? 'blue' : 'gray'">Submit</button>
+    `
+  }）
+  export class AppComponent{
+    isActive = true;
+    //isActive = false;
+  }
+  ```
+    - event binding
+    ```
+    @Component（{
+      selector:'my-app',
+      template:`
+        <button (click)= "onClick()">Submit</button>
+        <button on-click = "onClick()">Submit</button>
+      `
+    }）
+    export class AppComponent{
+      onClick(){
+        console.log("Clicked");
+      }
+    }
+
+    ```
