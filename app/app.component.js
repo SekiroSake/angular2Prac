@@ -37,7 +37,7 @@ System.register(['angular2/core', './favorite.component'], function(exports_1, c
                         // template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>'+
                         // '<authors></authors>',
                         // directives: [CoursesComponent,AuthorComponent]
-                        template: "\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
+                        template: "\n      <i class = \"glyphicon glyphicon-star\"></i>\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
                         directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

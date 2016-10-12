@@ -8,17 +8,18 @@ import {FavoriteComponent} from './favorite.component';
     // template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>'+
     // '<authors></authors>',
     // directives: [CoursesComponent,AuthorComponent]
-    template:`
+    template: `
+      <i class = "glyphicon glyphicon-star"></i>
       <favorite [isFavorite] = "post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
     `,
-    directives:[FavoriteComponent]
+    directives: [FavoriteComponent]
 })
 export class AppComponent {
-  post = {
-    title:"Title",
-    isFavorite: true
-  }
-  onFavoriteChange($event){
-    console.log($event);
-  }
+    post = {
+        title: "Title",
+        isFavorite: true
+    }
+    onFavoriteChange($event) {
+        console.log($event);
+    }
 }
