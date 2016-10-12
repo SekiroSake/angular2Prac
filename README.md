@@ -11,6 +11,7 @@ Practise ng2 with tutorials
   - $ npm install -g typings
 
 - for first init, $ npm install
+
 - $ npm start , project will be loaded in watch mode
 
 ### NPM internal problem (for windows)
@@ -281,7 +282,7 @@ export class CoursesComponent {
 
       <button on-click="onClick()">Submit</button>
 
-       ` }） export class AppComponent{ //onClick(){ //console.log("Clicked"); //} onClick($event){ console.log("Clicked",$event); } onDivClick(){ // $event.stopPropagation();//stop div binding传播 console.log("Handled by div"); } }
+      ` }） export class AppComponent{ //onClick(){ //console.log("Clicked"); //} onClick($event){ console.log("Clicked",$event); } onDivClick(){ // $event.stopPropagation();//stop div binding传播 console.log("Handled by div"); } }
 
     ```
 
@@ -330,4 +331,90 @@ import {Component} from 'angular2/core'
 export class AppComponent{
   title = "Angular App";
 }
+```
+
+## Reusable component
+
+### Input Properties
+
+- Using @Input annotation
+
+  ```
+  import    {Input}    from    ‘angular2/core’;    
+  @Component(…)    
+  export    class    FavoriteComponent    {    
+                @Input(‘is-favorite’)    isFavorite    =    false;    
+  }
+  ```
+
+- Using component metadata
+
+  ```
+  @Component({
+                inputs:    [‘isFavorite:is-favorite’]
+  })    
+  export    class    FavoriteComponent    {    
+                isFavorite    =    false;    
+  }
+  ```
+
+- In the host component
+
+  ```
+  <favorite    [is-favorite]=“post.isFavorite”></favorite>
+  ```
+
+### Output Properties
+
+- Using @Output annotation
+
+  ```
+  import    {Output}    from    ‘angular2/core’;    
+  @Component(…)    
+  export    class    FavoriteComponent    {    
+                @Output(‘favorite-change’)    change    =    new    EventEmitter();
+
+                onClick()    {
+                                this.change.emit({    newValue:    this.isFavorite    });
+                }    
+  }
+  ```
+
+- Using component metadata
+
+  ```
+  @Component({
+                outputs:    [‘change:favoriteChange’]
+  })    
+  export    class    FavoriteComponent    {    
+                change    =    new    EventEmitter();
+
+                onClick()    {
+                                this.change.emit({    newValue:    this.isFavorite    });
+                }    
+  }
+  ```
+
+- In the host component
+
+  ```
+  <favorite    (favoriteChange)=“onChange()”></favorite>
+  ```
+
+  ### Templates
+
+  ```
+  @Component({
+                        template:    ‘…’,    //    or    
+                        templateUrl:    ‘app/template.template.html’
+  })
+  ```
+
+### Styles
+
+```
+@Component({
+                        styles:    [‘…’],    
+            styleUrls:    [‘…’,    ‘…’];
+})
 ```
