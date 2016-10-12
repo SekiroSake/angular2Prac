@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './author.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './favorite.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,29 +10,35 @@ System.register(['angular2/core', './courses.component', './author.component'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, author_component_1;
+    var core_1, favorite_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
-            },
-            function (author_component_1_1) {
-                author_component_1 = author_component_1_1;
+            function (favorite_component_1_1) {
+                favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.post = {
+                        title: "Title",
+                        isFavorite: true
+                    };
                 }
+                AppComponent.prototype.onFavoriteChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>' +
-                            '<authors></authors>',
-                        directives: [courses_component_1.CoursesComponent, author_component_1.AuthorComponent]
+                        // template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>'+
+                        // '<authors></authors>',
+                        // directives: [CoursesComponent,AuthorComponent]
+                        template: "\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
+                        directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
