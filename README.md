@@ -401,20 +401,20 @@ export class AppComponent{
   <favorite    (favoriteChange)=“onChange()”></favorite>
   ```
 
-  ### Templates
+### Templates
 
-  ```
+```
   @Component({
                         template:    ‘…’,    //    or    
                         templateUrl:    ‘app/template.template.html’
   })
-  ```
+```
 
 ### Styles
 
 ```
-@Component({
-                        styles:    [‘…’],    
-            styleUrls:    [‘…’,    ‘…’];
-})
+  @Component({
+                          styles:    [‘…’],    
+                          styleUrls:     [‘…’,    ‘…’];
+                          })
 ```
