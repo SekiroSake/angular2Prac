@@ -1,4 +1,4 @@
-System.register(['angular2/core', './favorite.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './author.component', './favorite.component', './heart.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,22 +10,33 @@ System.register(['angular2/core', './favorite.component'], function(exports_1, c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, favorite_component_1;
+    var core_1, courses_component_1, author_component_1, favorite_component_1, heart_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (courses_component_1_1) {
+                courses_component_1 = courses_component_1_1;
+            },
+            function (author_component_1_1) {
+                author_component_1 = author_component_1_1;
+            },
             function (favorite_component_1_1) {
                 favorite_component_1 = favorite_component_1_1;
+            },
+            function (heart_component_1_1) {
+                heart_component_1 = heart_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                     this.post = {
                         title: "Title",
-                        isFavorite: true
+                        isFavorite: true,
+                        totalLikes: 10,
+                        iLike: false
                     };
                 }
                 AppComponent.prototype.onFavoriteChange = function ($event) {
@@ -37,8 +48,8 @@ System.register(['angular2/core', './favorite.component'], function(exports_1, c
                         // template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>'+
                         // '<authors></authors>',
                         // directives: [CoursesComponent,AuthorComponent]
-                        template: "\n      <i class = \"glyphicon glyphicon-star\"></i>\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
-                        directives: [favorite_component_1.FavoriteComponent]
+                        template: "\n      <h1>HelloAngularMy First Angular 2 App</h1><courses></courses>\n      <authors></authors>\n      <i class = \"glyphicon glyphicon-star\"></i>\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [iLike] =  \"post.iLike\" [totalLikes] = \"post.totalLikes\"></like>\n    ",
+                        directives: [courses_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
