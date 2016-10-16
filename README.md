@@ -418,3 +418,8 @@ export class AppComponent{
                           styleUrls:     [‘…’,    ‘…’];
                           })
 ```
+
+## ngIf && [hidden]
+- If ngIf returns false, the <div> will not be rendered in html
+- If Hidden is true, however, the <div> is still in html, it's just not showing
+  * [hidden] will take more memory space, so if the div tree is big, use  ngif rather than [hidden]

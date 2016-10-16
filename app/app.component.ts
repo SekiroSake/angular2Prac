@@ -20,10 +20,20 @@ import {VoteComponent} from './vote.component';
             [voteNum]="post.voteNum"
             [myVote]="post.myVote">
       </vote>
+      <div [hidden]="courses.length == 0">
+        List of courses test1
+      </div>
+      <div [hidden]="courses.length > 0">
+        List of courses test2
+      </div>
+      <div *ngIf="courses.length == 0">
+        You don't have any courses yet.
+      </div>
     `,
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent,VoteComponent]
 })
 export class AppComponent {
+    courses = [];
     post = {
         title: "Title",
         isFavorite: true,
