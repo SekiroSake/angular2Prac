@@ -426,3 +426,17 @@ export class AppComponent{
   * But, if the whole tree is show/hide repeatly, using [hidden] is a better choice, because ngif will delete and insert the div again and again
 
 ## ngSwitch and if
+
+## The Leading Asterisk (``` * ```)
+- Make ```*ngFor, *ngIf``` understandable by angular2
+
+## Pipes(管道)
+Buikt-in Pipes
+- Uppercase
+- Lowercase
+- Decimal
+- Currency
+- Date
+- Json
+* eg --> {{course.title | uppercase }}
+* Json -- > Object object --> JSON format 

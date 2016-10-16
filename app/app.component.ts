@@ -4,6 +4,7 @@ import {AuthorComponent} from './author.component';
 import {FavoriteComponent} from './favorite.component';
 import {HeartComponent} from './heart.component';
 import {VoteComponent} from './vote.component';
+import {SummaryPipe} from './summary.pipe'
 
 @Component({
     selector: 'my-app',
@@ -37,15 +38,26 @@ import {VoteComponent} from './vote.component';
         <template [ngSwitchWhen]="'map'">Map View Content</template>
         <template [ngSwitchWhen]="'list'">List View Content</template>
       </div>
+      <ul>
+        <li *ngFor="#course of courses,#i = index">
+            {{ i + 1}} - {{course}}
+        </li>
+      </ul>
+      {{post.title}}
+      <br/>
+      {{post.body | summary:3}}
     `,
+    pipes: [SummaryPipe],
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent,VoteComponent]
 })
 export class AppComponent {
+    courses = ['course 1', 'course 2', 'course 3'];
     /*viewMode = 'map' can be replace as ngSwitchDefault inside the target template div*/
     viewMode = 'map';//this is init, make the default option for the list
-    courses = [];
+
     post = {
-        title: "Title",
+        title: "Angular Tutorial",
+        body:'123456789十1112',
         isFavorite: true,
         totalLikes: 10,
         iLike: false,
@@ -55,4 +67,5 @@ export class AppComponent {
     onFavoriteChange($event) {
         console.log($event);
     }
+
 }
