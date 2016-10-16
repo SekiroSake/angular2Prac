@@ -35,6 +35,8 @@ System.register(['angular2/core', './courses.component', './author.component', '
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    /*viewMode = 'map' can be replace as ngSwitchDefault inside the target template div*/
+                    this.viewMode = 'map'; //this is init, make the default option for the list
                     this.courses = [];
                     this.post = {
                         title: "Title",
@@ -54,7 +56,7 @@ System.register(['angular2/core', './courses.component', './author.component', '
                         // template: '<h1>HelloAngularMy First Angular 2 App</h1><courses></courses>'+
                         // '<authors></authors>',
                         // directives: [CoursesComponent,AuthorComponent]
-                        template: "\n      <h1>HelloAngularMy First Angular 2 App</h1><courses></courses>\n      <authors></authors>\n      <i class = \"glyphicon glyphicon-star\"></i>\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [iLike] =  \"post.iLike\" [totalLikes] = \"post.totalLikes\"></like>\n      <vote\n            [voteNum]=\"post.voteNum\"\n            [myVote]=\"post.myVote\">\n      </vote>\n      <div [hidden]=\"courses.length == 0\">\n        List of courses test1\n      </div>\n      <div [hidden]=\"courses.length > 0\">\n        List of courses test2\n      </div>\n      <div *ngIf=\"courses.length == 0\">\n        You don't have any courses yet.\n      </div>\n    ",
+                        template: "\n      <h1>HelloAngularMy First Angular 2 App</h1><courses></courses>\n      <authors></authors>\n      <i class = \"glyphicon glyphicon-star\"></i>\n      <favorite [isFavorite] = \"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [iLike] =  \"post.iLike\" [totalLikes] = \"post.totalLikes\"></like>\n      <vote\n            [voteNum]=\"post.voteNum\"\n            [myVote]=\"post.myVote\">\n      </vote>\n      <div [hidden]=\"courses.length == 0\">\n        List of courses test1\n      </div>\n      <div [hidden]=\"courses.length > 0\">\n        List of courses test2\n      </div>\n      <div *ngIf=\"courses.length == 0\">\n        You don't have any courses yet.\n      </div>\n      <ul class=\"nav nav-pills\">\n        <li [class.active]=\"viewMode == 'map'\"><a (click)=\"viewMode = 'map'\">Map View</a></li>\n        <li [class.active]=\"viewMode == 'list'\"><a (click)=\"viewMode = 'list'\">List View</a></li>\n      </ul>\n      <div [ngSwitch] = \"viewMode\">\n        <template [ngSwitchWhen]=\"'map'\">Map View Content</template>\n        <template [ngSwitchWhen]=\"'list'\">List View Content</template>\n      </div>\n    ",
                         directives: [courses_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent, vote_component_1.VoteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

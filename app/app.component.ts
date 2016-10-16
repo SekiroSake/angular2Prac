@@ -29,10 +29,20 @@ import {VoteComponent} from './vote.component';
       <div *ngIf="courses.length == 0">
         You don't have any courses yet.
       </div>
+      <ul class="nav nav-pills">
+        <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+        <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+      </ul>
+      <div [ngSwitch] = "viewMode">
+        <template [ngSwitchWhen]="'map'">Map View Content</template>
+        <template [ngSwitchWhen]="'list'">List View Content</template>
+      </div>
     `,
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent,VoteComponent]
 })
 export class AppComponent {
+    /*viewMode = 'map' can be replace as ngSwitchDefault inside the target template div*/
+    viewMode = 'map';//this is init, make the default option for the list
     courses = [];
     post = {
         title: "Title",
