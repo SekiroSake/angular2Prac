@@ -46,23 +46,42 @@ import {SummaryPipe} from './summary.pipe'
       {{post.title}}
       <br/>
       {{post.body | summary:3}}
+      <button
+
+        [ngStyle]="{
+          backgroundColor:canSave ? 'blue' : 'gray',
+          color:canSave ? 'white' : 'black',
+          fontWeight:canSave ? 'bold' : 'normal'
+        }"
+      >Submit</button>
+      <ul>
+        <li>Title: {{ task.title}}</li>
+        <li>Assigned to : {{ task.assignee != null ? task.assignee.name : "It's null"}}</li>
+          <li>Assigned to : {{ task.assignee?.name }}</li>
+      </ul>
     `,
     pipes: [SummaryPipe],
-    directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent,VoteComponent]
+    directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent, VoteComponent]
 })
 export class AppComponent {
+  /*For alvis operator*/
+    task = {
+      title:"Review applications",
+      assignee:null
+    };
+    canSave = true;
     courses = ['course 1', 'course 2', 'course 3'];
     /*viewMode = 'map' can be replace as ngSwitchDefault inside the target template div*/
     viewMode = 'map';//this is init, make the default option for the list
 
     post = {
         title: "Angular Tutorial",
-        body:'123456789十1112',
+        body: '123456789十1112',
         isFavorite: true,
         totalLikes: 10,
         iLike: false,
-        voteNum:10,
-        myVote:0
+        voteNum: 10,
+        myVote: 0
     };
     onFavoriteChange($event) {
         console.log($event);

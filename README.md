@@ -439,4 +439,11 @@ Buikt-in Pipes
 - Date
 - Json
 * eg --> {{course.title | uppercase }}
-* Json -- > Object object --> JSON format 
+* Json -- > Object object --> JSON format
+
+## ngClass
+- see favorite.template.html
+- This class means the css class
+
+## ngStyle
+- set multiple incline style simultaneously
