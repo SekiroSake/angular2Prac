@@ -477,8 +477,8 @@ Buikt-in Pipes
 
 ```
 - Template-driven forms
- ** Controls are created implicitly by Angular. This will give us limited control over validation
-(eg required, min length and max length via HTML5 attributes). **
+ **Controls are created implicitly by Angular. This will give us limited control over validation
+(eg required, min length and max length via HTML5 attributes).**
 ```
 
 <form>
