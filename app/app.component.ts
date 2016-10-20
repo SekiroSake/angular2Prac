@@ -4,7 +4,8 @@ import {AuthorComponent} from './author.component';
 import {FavoriteComponent} from './favorite.component';
 import {HeartComponent} from './heart.component';
 import {VoteComponent} from './vote.component';
-import {SummaryPipe} from './summary.pipe'
+import {SummaryPipe} from './summary.pipe';
+import {ContactFormComponent} from './contact-form.component'
 
 @Component({
     selector: 'my-app',
@@ -33,9 +34,10 @@ import {SummaryPipe} from './summary.pipe'
       <ul class="nav nav-pills">
         <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
         <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+
       </ul>
       <div [ngSwitch] = "viewMode">
-        <template [ngSwitchWhen]="'map'">Map View Content</template>
+        <template [ngSwitchWhen]="'map'">Map View Contentxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</template>
         <template [ngSwitchWhen]="'list'">List View Content</template>
       </div>
       <ul>
@@ -59,9 +61,10 @@ import {SummaryPipe} from './summary.pipe'
         <li>Assigned to : {{ task.assignee != null ? task.assignee.name : "It's null"}}</li>
           <li>Assigned to : {{ task.assignee?.name }}</li>
       </ul>
+      <contact-form></contact-form>  
     `,
     pipes: [SummaryPipe],
-    directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent, VoteComponent]
+    directives: [CoursesComponent, AuthorComponent, FavoriteComponent, HeartComponent, VoteComponent,ContactFormComponent]
 })
 export class AppComponent {
   /*For alvis operator*/
