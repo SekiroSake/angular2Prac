@@ -483,3 +483,24 @@ export interface Post{
   - use Reactive Extensions (RxJS)
   - an array whose items arrive asynchronously over time
 ### Angular 2 uses Rx.js Observables instead of promises for dealing with HTTP.
+
+## Routers- for SPA
+- Config
+```
+//under app.components.ts, before @Component, set routes
+@RouteConfig([
+  { path:'/albums', name:'Albums', component:AlbumsComponent, useAsDefault: true},
+  { path:'/contact', name:'contact', component: ContactComponent},
+  {path:'/*other',name: 'Other', redirectTo:['Albums'] }
+  ])
+@Component({
+   selector:'my-app',
+   templateUrl:'/app/app.component.html'
+  })
+```
+
+- Route Outlet
+```
+//in html
+<router-outlet></router-outlet>
+```
