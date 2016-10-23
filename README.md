@@ -243,7 +243,7 @@ export class CoursesComponent {
 
 ### Binding
 
-- interpolation ： 插值 --> used in ng1 ng2 as expresseion -- > eg {{data.id}}
+- interpolation ： insert value || like expression language in jsp --> used in ng1 ng2 as expresseion -- > eg {{data.id}}
 
   - property binding is one way: component -> view(DOM), e.g :
 
