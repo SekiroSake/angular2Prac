@@ -447,3 +447,22 @@ Buikt-in Pipes
 
 ## ngStyle
 - set multiple incline style simultaneously
+
+## angular life cycle
+- OnInit
+- OnDestroy
+- DoCheck
+- OnChanges
+- AfterContentChecked
+- AfterViewInit
+- AfterViewChecked
+
+## static type checking
+```
+export interface Post{
+  userId: number;
+  id: number;
+  title: String;
+  body: String;
+}
+```
