@@ -7,6 +7,9 @@ Practise ng2 with tutorials
 - in angular-cli.json,"apps": [{... can customize setting like index.html, "prefix": "app" add 'app-' to selector name
 - to integrate angular project in eclipse, do not copy and paste the whole angular project, instead, use 'ng build' then copy and paste the minified file in dist folder to it
 
+## Mac Users
+- Please use brew to install node js, I found it easier to maintain node code
+
 ## How to Run
 
 - Update environment of nodejs and npm
