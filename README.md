@@ -446,7 +446,7 @@ export class AppComponent{
 
 - Make `*ngFor, *ngIf` understandable by angular2
 
-## Pipes(管道)
+## Pipes(important)
 
 Buikt-in Pipes
 
