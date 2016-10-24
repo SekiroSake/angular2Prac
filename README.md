@@ -504,3 +504,8 @@ export interface Post{
 //in html
 <router-outlet></router-outlet>
 ```
+
+- maintain routers
+  * DDD : Domain driven dev
+
+- Use shared folder
