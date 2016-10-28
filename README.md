@@ -2,11 +2,6 @@
 
 Practise ng2 with tutorials
 
-## Angular cli trick
-
-- in angular-cli.json,"apps": [{... can customize setting like index.html, "prefix": "app" add 'app-' to selector name
-- to integrate angular project in eclipse, do not copy and paste the whole angular project, instead, use 'ng build' then copy and paste the minified file in dist folder to it
-
 ## How to Run
 
 - Update environment of nodejs and npm
@@ -425,113 +420,92 @@ export class AppComponent{
 ```
 
 ## ngIf && [hidden]
-
-- If ngIf returns false, the
-
-  <div> will not be rendered in html</div>
-
-- If Hidden is true, however, the
-
-  <div> is still in html, it's just not showing<ul>
-    <li>[hidden] will take more memory space, so if the div tree is big, use  ngif rather than [hidden]</li>
-    <li>But, if the whole tree is show/hide repeatly, using [hidden] is a better choice, because ngif will delete and insert the div again and again</li>
-  </ul></div>
+- If ngIf returns false, the <div> will not be rendered in html
+- If Hidden is true, however, the <div> is still in html, it's just not showing
+  * [hidden] will take more memory space, so if the div tree is big, use  ngif rather than [hidden]
+  * But, if the whole tree is show/hide repeatly, using [hidden] is a better choice, because ngif will delete and insert the div again and again
 
 ## ngSwitch and if
 
-## The Leading Asterisk (`*`)
-
-- Make `*ngFor, *ngIf` understandable by angular2
+## The Leading Asterisk (``` * ```)
+- Make ```*ngFor, *ngIf``` understandable by angular2
 
 ## Pipes(管道)
-
 Buikt-in Pipes
-
 - Uppercase
 - Lowercase
 - Decimal
 - Currency
 - Date
 - Json
-- eg --> {{course.title | uppercase }}
-- Json -- > Object object --> JSON format
+* eg --> {{course.title | uppercase }}
+* Json -- > Object object --> JSON format
 
 ## ngClass
-
 - see favorite.template.html
 - This class means the css class
 
 ## ngStyle
-
 - set multiple incline style simultaneously
 
-# Form
+## angular life cycle
+- OnInit
+- OnDestroy
+- DoCheck
+- OnChanges
+- AfterContentChecked
+- AfterViewInit
+- AfterViewChecked
 
-- A Basic Bootstrap Form ```
-
-  <form>
-    <div class="form-­‐group"><label for="name">Name</label>
-      <input type="text" id="name" class="form-­‐control"></div>
-    <button type="submit" class="btn btn­‐primary">Submit</button>
-  </form>
-
+## static type checking
 ```
-- Template-driven forms
- **Controls are created implicitly by Angular. This will give us limited control over validation
-(eg required, min length and max length via HTML5 attributes).**
-```
-
-<form>
-…
-<input ngcontrol="name">
-…
-<input ngcontrol="email"></form>
-
-```
-- Showing Validation Errors
+export interface Post{
+  userId: number;
+  id: number;
+  title: String;
+  body: String;
+}
 ```
 
-<input
+## Promise and observable
+- A Promise handles a single callback when an async operation completes or fails.
+- An Observable is like a Stream (in many languages) and allows to pass zero or more events where the callback is called for each event.
+- Observable provides operators like map, forEach, reduce, ... similar to an array
 
-```
-  #name="ngForm"
-  ngControl=“name"
-  required>
-  <div
-    class="alert alert­‐danger" ❤ngIf="name.touched && !name.valid">Name is required.
-  </div>
-```
+* promise:
+  - returns a single value
+  - not cancellable
+* observable
+  - works with multiple values over time
+  - cancellable
+  - supports map, filter, reduce and similar operators
+  - proposed feature for ES 2016
+  - use Reactive Extensions (RxJS)
+  - an array whose items arrive asynchronously over time
+### Angular 2 uses Rx.js Observables instead of promises for dealing with HTTP.
 
+## Routers- for SPA
+- Config
 ```
-
-- Showing Specific Validation Errors
-```
-
-<input
-
-```
-  #name="ngForm"
-  ngControl="name"
-  required
-  minlength="3">
-  <div ❤ngIf="name.touched && name.errors">
-    <div ❤ngIf="name.errors.required" class="…"> Name is required.</div>
-    <div ❤ngIf="name.errors.minlength" class="…">Name should be minimum 3 characters. </div>
-  </div>
-```
-
-```
-
-- Highlighting the invalid inputs
+//under app.components.ts, before @Component, set routes
+@RouteConfig([
+  { path:'/albums', name:'Albums', component:AlbumsComponent, useAsDefault: true},
+  { path:'/contact', name:'contact', component: ContactComponent},
+  {path:'/*other',name: 'Other', redirectTo:['Albums'] }
+  ])
+@Component({
+   selector:'my-app',
+   templateUrl:'/app/app.component.html'
+  })
 ```
 
-.ng­‐touched.ng­‐invalid { border:1px solid red; }
-
+- Route Outlet
+```
+//in html
+<router-outlet></router-outlet>
 ```
 
-- Disabling the submit button if form is invalid
-```
-
+<<<<<<< HEAD
 <form #f="ngForm">
 etc
 <button [disabled]="!f.valid">Submit</button></form>
@@ -543,3 +517,9 @@ etc
 <button type="submit">Submit</button></form>
 
 ```
+=======
+- maintain routers
+  * DDD : Domain driven dev
+
+- Use shared folder
+>>>>>>> b16e61625cf120cc6ba3fe6fbccae0ad62c9a85f
