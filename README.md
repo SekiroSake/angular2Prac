@@ -533,13 +533,13 @@ Buikt-in Pipes
 ```
 
 <form #f="ngForm">
-…
+etc
 <button [disabled]="!f.valid">Submit</button></form>
 
-`- Submitting the form`
+`- Submitting the form when submit`
 
 <form #f="ngForm" (ngsubmit)="onSubmit(f.form)">
-…
+ etc
 <button type="submit">Submit</button></form>
 
 ```
