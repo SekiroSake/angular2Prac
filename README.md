@@ -20,7 +20,19 @@ Practise ng2 with tutorials
 - '#WindowsGoToHell#PleaseCodingOnMac'
 
 # All in one CheatSheet
-
+## Class and Interface
+- Interface:Interfaces are only at compile time. This allows only you to check that the expected data received 
+- Class: present at runtime (constructor function) and you can define methods in them with processing. should hava new xx()
+  - ```
+  this.http.get('...')
+    .map(res => {
+      var data = res.json();
+      return data.map(d => {
+        return new Product(d.productNumber,
+          d.productName, d.productDescription);
+      });
+    });
+  ```
 ## Creating Components
 
 ```
