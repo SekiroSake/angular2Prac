@@ -25,7 +25,8 @@ Practise ng2 with tutorials
 - map() map the result to any format, e.g.   .map(res => res.json());
 - subscribe() subscribe to the observable. .subscribe is the function that actually executes the observable.
 ### share() 
-- 
+- the usage of share()
+
 ## Class and Interface
 - Interface:Interfaces are only at compile time. This allows only you to check that the expected data received 
 - Class: present at runtime (constructor function) and you can define methods in them with processing. should hava new xx()
