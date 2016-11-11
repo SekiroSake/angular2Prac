@@ -24,7 +24,7 @@ Practise ng2 with tutorials
 - get() get the http request
 - map() map the result to any format, e.g.   .map(res => res.json());
 - subscribe() subscribe to the observable. .subscribe is the function that actually executes the observable.
-
+### share() 
 - 
 ## Class and Interface
 - Interface:Interfaces are only at compile time. This allows only you to check that the expected data received 
