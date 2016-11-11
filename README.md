@@ -24,7 +24,9 @@ Practise ng2 with tutorials
 - get() get the http request
 - map() map the result to any format, e.g.   .map(res => res.json());
 - subscribe() subscribe to the observable. .subscribe is the function that actually executes the observable.
-### share() 
+
+### share()
+
 - the usage of share()
 
 ## Class and Interface
