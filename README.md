@@ -42,7 +42,7 @@ Practise ng2 with tutorials
   ```
 ## Creating Components
 
-```
+  ```typescript
 import {Component} from ‘angular2/core’
 @Component({
      selector: ‘courses’,
@@ -53,7 +53,7 @@ export class Component { }
 
 ## Using Components
 
-```
+```typescript
 //In AppComponent:
 
 import {CoursesComponent} from ‘./courses.component’
@@ -65,7 +65,7 @@ template: ‘<courses></courses>’, directives: [CoursesComponent]
 
 ## Templates
 
-```
+  ```typescript
 Interpolation  {{ title }}
 Displaying lists:
 <ul>
@@ -76,7 +76,7 @@ Displaying lists:
 
 ## Services
 
-```
+  ```typescript
 export class CourseService {
 
 }
@@ -84,7 +84,7 @@ export class CourseService {
 
 ## Dependency Injection
 
-```
+  ```typescript
 @Component({
 providers: [CourseService]
 })
@@ -95,7 +95,7 @@ export class CourseComponent {  constructor(courseService: CourseService) {   }
 
 ## Directives
 
-```
+  ```typescript
 import {Directive} from ‘angular2/core’
 
 @Directive({
@@ -111,7 +111,7 @@ onBlur() {
 
 ## To access and modify DOM elements
 
-```
+  ```typescript
 import {ElementRef, Renderer} from ‘angular2/core’
 export class AutoGrowDirective {
 constructor(el: ElementRef, renderer: Renderer) {  }
@@ -127,7 +127,7 @@ onFocus(){
 
 --------------------------------------------------------------------------------
 
-```
+  ```typescript
 import {Component} from 'angular2/core'
 
 @Component({
@@ -152,7 +152,7 @@ export class CoursesComponent {
 
 --------------------------------------------------------------------------------
 
-```
+  ```typescript
 export class CourseService {
   getCourses() : string[] {
     return ["Courses1", "Courses2", "Courses3"];
@@ -163,8 +163,7 @@ export class CourseService {
 ## Dependency Injection
 
 --------------------------------------------------------------------------------
-
-```
+  ```typescript
 import {Component} from 'angular2/core'
 import {CourseService} from './course.service'
 
@@ -195,7 +194,7 @@ export class CoursesComponent {
 
 ## * auto-grow.directive.ts
 
-```
+  ```typescript
 import {Directive, ElementRef, Renderer} from 'angular2/core'
 
 @Directive({
@@ -221,8 +220,7 @@ export class AutoGrowDirective {
 ```
 
 ## * courses.component.ts
-
-```
+  ```typescript
 import {Component} from 'angular2/core'
 import {CourseService} from './course.service'
 import {AutoGrowDirective} from './auto-grow.directive';
@@ -258,13 +256,13 @@ export class CoursesComponent {
 
   - property binding is one way: component -> view(DOM), e.g :
 
-    ```
+      ```typescript
     <img [src]="imageUrl"/>
     ```
 
   - class binding
 
-    ```
+      ```typescript
     @Component（{
       selector:'my-app',
       template:`
@@ -279,7 +277,7 @@ export class CoursesComponent {
 
   - style binding
 
-    ```
+  ```typescript
     @Component（{
     selector:'my-app',
     template:`
