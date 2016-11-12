@@ -20,7 +20,7 @@ Practise ng2 with tutorials
 - '#WindowsGoToHell#PleaseCodingOnMac'
 
 # All in one CheatSheet
-## Http: get() map() and subscribe()
+## Http: get() map() and subscribe() - important concepts imported from rxjs
 - get() get the http request
 - map() map the result to any format, e.g.   .map(res => res.json());
 - subscribe() subscribe to the observable. .subscribe is the function that actually executes the observable.
